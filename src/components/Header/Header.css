@@ -61,12 +61,6 @@
 
 @media only screen and (min-width: 1200px) {
 
-    /* .title_with_image {
-        display: inline-flex;
-        padding: 2rem 2rem 0 2rem;
-        align-items: center;
-    } */
-
     .main_heading {
         font-size: 6rem;
     }
