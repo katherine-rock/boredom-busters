@@ -29,6 +29,54 @@
 .intro_text {
     color: white;
     padding: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
+}
+
+/* For tablets  */
+
+@media only screen and (min-width: 768px) {
+
+    .title_with_image {
+        display: inline-flex;
+        padding: 2rem 2rem 0 2rem;
+        align-items: center;
+    }
+
+    .main_heading {
+        font-size: 4rem;
+    }
+
+    .header img {
+        max-width: 50vw;
+    }
+
+    .intro_text {
+        font-size: 1.6rem;
+    }
+
+}
+
+/* For Desktop  */
+
+@media only screen and (min-width: 1200px) {
+
+    /* .title_with_image {
+        display: inline-flex;
+        padding: 2rem 2rem 0 2rem;
+        align-items: center;
+    } */
+
+    .main_heading {
+        font-size: 6rem;
+    }
+
+    .header img {
+        max-width: 30vw;
+    }
+
+    .intro_text {
+        font-size: 1.6rem;
+    }
+
 }
