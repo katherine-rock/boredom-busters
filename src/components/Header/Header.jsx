@@ -11,6 +11,7 @@ const Header = () => {
             </div>
 
             <div className="intro_text">
+                <p>Bored? Stuck at home?</p>
                 <p>Looking for something to do?</p>
                 <p>Choose a category below to get a suggested activity.</p>
             </div>

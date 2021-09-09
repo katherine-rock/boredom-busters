@@ -19,6 +19,7 @@
     color: #F5CB11;
     padding: 2rem 1rem 0rem 1rem;
     font-size: 3rem;
+    text-align: center;
 }
 
 .header img {
@@ -29,4 +30,5 @@
     color: white;
     padding: 2rem;
     font-size: 1.5rem;
+    text-align: center;
 }
