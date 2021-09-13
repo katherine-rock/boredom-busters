@@ -1,0 +1,81 @@
+* {
+    margin: 0
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    margin: 1rem 3rem;
+    border: black solid 2px;
+    text-align: center;
+    font-weight: bold;
+    width: 80vw;
+}
+
+button:nth-child(odd) {
+    background-color: #F5CB11;
+    color: #121212;
+}
+
+button:nth-child(even) {
+    background-color: #121212;
+    color: #F5CB11;
+}
+
+/* For tablets  */
+
+@media only screen and (min-width: 768px) {
+
+    button {
+        max-width: 30vw;
+    }
+
+    .searchButtons {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    button:nth-child(1), 
+    button:nth-child(4), 
+    button:nth-child(5), 
+    button:nth-child(8), 
+    button:nth-child(9) {
+        background-color: #F5CB11;
+        color: #121212;
+    }
+
+    button:nth-child(2), 
+    button:nth-child(3), 
+    button:nth-child(6), 
+    button:nth-child(7), 
+    button:nth-child(10) {
+        background-color: #121212;
+        color: #F5CB11;
+    }
+
+}
+
+/* For Desktop  */
+
+@media only screen and (min-width: 1200px) {
+
+    .searchButtons{
+        margin: 5vw;
+    }
+
+    button {
+        max-width: 20vw;
+    }
+
+    button:nth-child(odd) {
+        background-color: #F5CB11;
+        color: #121212;
+    }
+
+    button:nth-child(even) {
+        background-color: #121212;
+        color: #F5CB11;
+    }
+
+}
