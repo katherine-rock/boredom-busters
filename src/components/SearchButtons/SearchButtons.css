@@ -12,6 +12,12 @@ button {
     width: 80vw;
 }
 
+button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #121212;
+}
+
 button:nth-child(odd) {
     background-color: #F5CB11;
     color: #121212;
@@ -78,4 +84,11 @@ button:nth-child(even) {
         color: #F5CB11;
     }
 
+    button:hover {
+        background-color: #9BC59D;
+        color: #121212;
+        transition: 1s;
+    }
+
 }
+

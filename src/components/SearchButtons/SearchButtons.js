@@ -6,8 +6,8 @@ const activityType = ["Education", "Recreational", "Social", "DIY", "Charity", "
 const SearchButtons = () => {
     return (
         <div className="searchButtons">
-        {activityType.map((type) => {
-            return <button>{type}</button>
+        {activityType.map((type, index) => {
+            return <button key={index}>{type}</button>
         })}
         </div>
     )
