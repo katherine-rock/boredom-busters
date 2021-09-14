@@ -27,11 +27,22 @@ const activityType = [
     { type: "busywork", label: "Busywork"},
 ]
 
-const SearchButtons = () => {
+const SearchButtons = (props) => {
+    const {addResult, searchBoredAPI, chooseType} = props
+
+    function handleSearch(event) {
+        console.log("Button has been clicked. This is from the handleSearch function in the SearchButtons component.")
+        chooseType(event)
+        console.log(props.type)
+        searchBoredAPI(props.type)
+        console.log("This is props.type: ",props.type)
+        event.preventDefault()
+    }
+
     return (
         <div className="searchButtons">
         {activityType.map((activity, index) => {
-            return <button key={index}>{activity.label}</button>
+            return <button onClick={handleSearch} key={index}>{activity.label}</button>
         })}
         </div>
     )

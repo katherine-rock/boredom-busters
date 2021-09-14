@@ -8,8 +8,6 @@ function capitalise(string) {
     return string.charAt(0).toUpperCase() + lower.slice(1) 
 }
 
-const test = "testOFFUNCtion"
-
     return (
         <div className="result">
             <p>Activity Type: {capitalise(props.result.type)}</p>
