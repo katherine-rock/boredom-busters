@@ -3,9 +3,17 @@ import './Activity.css';
 
 const Activity = (props) => {
 
+function capitalise(string) {
+    const lower = string.toLowerCase()
+    return string.charAt(0).toUpperCase() + lower.slice(1) 
+}
+
+const test = "testOFFUNCtion"
+
     return (
         <div className="result">
-            <p>{props.result.damnactivity}</p>
+            <p>Activity Type: {capitalise(props.result.type)}</p>
+            <p>{props.result.activity}</p>
         </div>
     )
 }
