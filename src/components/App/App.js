@@ -6,20 +6,20 @@ import Activity from '../Activity/Activity'
 import ActivityList from '../ActivityList/ActivityList'
 
 const App = () => {
-  const result = {
-    activity: "Kat's awesome random activity to test the component",
-    type: "social",
-    participants: 1,
-    price: 0.1,
-    link: "",
-    key: "1288934",
-    accessibility: 0.2,
-  };
+  // const result = {
+  //   activity: "Kat's awesome random activity to test the component",
+  //   type: "social",
+  //   participants: 1,
+  //   price: 0.1,
+  //   link: "",
+  //   key: "1288934",
+  //   accessibility: 0.2,
+  // };
   
-  const initialResults = [result, result, result];
+  // const initialResults = [result];
 
-  const [results, setResults] = useState(initialResults)
-  const [type, setType] = useState({ type: '' })
+  const [results, setResults] = useState()
+  const [type, setType] = useState({type: ""});
 
   function addResult(result) {
     setResults([results, ...results])
@@ -28,7 +28,7 @@ const App = () => {
   function chooseType(event) {
     console.log("This is the chooseType function in App.js")
     setType({ type: event.target.value})
-    console.log("This is the initial value of type: ",{type})
+    console.log("This is the updated value of type: ",{type})
   }
 
   function searchBoredAPI(type) {
@@ -38,7 +38,8 @@ const App = () => {
   return (
     <div >
       < Header />
-      < ActivityList results={results} />
+      < Activity />
+      {/* < ActivityList results={results} /> */}
       < SearchButtons 
           addResult={addResult} 
           searchBoredAPI={searchBoredAPI} 
@@ -48,4 +49,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
