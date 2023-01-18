@@ -3,32 +3,23 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import SearchButtons from '../SearchButtons/SearchButtons'
 import Activity from '../Activity/Activity'
-import ActivityList from '../ActivityList/ActivityList'
 
 const App = () => {
-  // const result = {
-  //   activity: "Kat's awesome random activity to test the component",
-  //   type: "social",
-  //   participants: 1,
-  //   price: 0.1,
-  //   link: "",
-  //   key: "1288934",
-  //   accessibility: 0.2,
-  // };
+  const pretendActivity = {
+    activity: "Kat's new activity to test the component",
+    type: "social",
+    participants: 1,
+    price: 0.1,
+    link: "",
+    key: "1288934",
+    accessibility: 0.2,
+  };
   
-  // const initialResults = [result];
-
-  const [results, setResults] = useState()
-  const [type, setType] = useState({type: ""});
-
-  function addResult(result) {
-    setResults([results, ...results])
-  }
+  const [type, setType] = useState('');
+  const [activity, setActivity] = useState({});
 
   function chooseType(event) {
-    console.log("This is the chooseType function in App.js")
     setType({ type: event.target.value})
-    console.log("This is the updated value of type: ",{type})
   }
 
   function searchBoredAPI(type) {
@@ -38,10 +29,9 @@ const App = () => {
   return (
     <div >
       < Header />
-      < Activity />
-      {/* < ActivityList results={results} /> */}
+      < Activity activity={pretendActivity} />
       < SearchButtons 
-          addResult={addResult} 
+          setActivity={setActivity}
           searchBoredAPI={searchBoredAPI} 
           chooseType={chooseType}/>
       < Footer />
