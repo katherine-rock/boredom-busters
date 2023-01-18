@@ -87,7 +87,7 @@ button:nth-child(even) {
     button:hover {
         background-color: #9BC59D;
         color: #121212;
-        transition: 1s;
+        transition: .5s;
     }
 
 }
