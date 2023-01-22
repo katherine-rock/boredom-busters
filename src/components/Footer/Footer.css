@@ -1,5 +1,10 @@
-.footer {
+.copyrightSection {
     text-align: center;
     padding: 1rem;
     font-style: italic;
+}
+
+.ApiInfoSection {
+    text-align: center;
+    padding: 1rem;
 }
