@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './SearchButtons.css';
 
 const activityType = [
@@ -14,27 +14,13 @@ const activityType = [
 ]
 
 const SearchButtons = (props) => {
-    const [ selectedType, setSelectedType] = useState('');
-    const {addResult, searchBoredAPI, chooseType} = props
-
-    function handleClick(event) {
-        // console.log("Button has been clicked. This is from the handleClick function in the SearchButtons component.")
-        // setSelectedType(event.target.value)
-        // console.log('setSelectedType has been called')
-        // console.log(event.target.value)
-        // console.log(selectedType)
-        // console.log(typeof(selectedType)) //THis is an object
-
-        event.preventDefault()
-
-    }
 
     return (
         <div>
             <div className="searchButtons">
             {activityType.map((activity, index) => {
                 return (           
-                <button onClick={handleClick} value={activity.type} key={index}>{activity.label}</button>
+                <button onClick={(event) => props.changeActivityType(event.target.value)} value={activity.type} key={index}>{activity.label}</button>
                 )
             })}
             </div>

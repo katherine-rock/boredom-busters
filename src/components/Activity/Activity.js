@@ -2,6 +2,7 @@ import React from "react";
 import './Activity.css';
 
 const Activity = (props) => {
+
     if (props.activity) {
         return (
             <div className="result">

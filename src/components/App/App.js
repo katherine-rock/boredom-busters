@@ -15,32 +15,21 @@ const App = () => {
       .then((response)=> {
         if (response.ok) {
           return response.json(); 
-        }
+        } 
+        // Not fully tested yet setApiError
+        setApiError(true)
         throw new Error("Bad response - message from App.js fetch")
       })
       .then((response) => setActivity(response))
       .catch((error) => console.log(error));
-    },[]) 
-
-  const pretendActivity = {
-    activity: "Kat's new activity to test the component",
-    type: "social",
-    participants: 1,
-    price: 0.1,
-    link: "",
-    key: "1288934",
-    accessibility: 0.2,
-  };
+    },[selectedType]) 
   
   return (
     <div >
       < Header />
       < Activity activity={activity} />
       < ApiError apiError={apiError} />
-      < SearchButtons 
-          setActivity={setActivity}
-          />
-      
+      < SearchButtons changeActivityType={activityType => setSelectedType(activityType)} />
       < Footer />
     </div>
   )
