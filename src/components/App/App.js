@@ -11,7 +11,7 @@ const App = () => {
     const [selectedType, setSelectedType] = useState('social');
 
     useEffect(() => {
-      fetch(`http://www.boredapi.com/api/activity?type=${selectedType}`)
+      fetch(`https://www.boredapi.com/api/activity?type=${selectedType}`)
       .then((response)=> {
         if (response.ok) {
           return response.json(); 
