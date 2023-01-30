@@ -10,6 +10,7 @@ button {
     text-align: center;
     font-weight: bold;
     width: 80vw;
+    border-radius: 10px;
 }
 
 button:hover {

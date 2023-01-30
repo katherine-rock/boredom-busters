@@ -1,10 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import SearchButtons from '../SearchButtons/SearchButtons'
 import Activity from '../Activity/Activity'
+import ApiError from '../ApiError/ApiError'
 
 const App = () => {
+    const [activity, setActivity] = useState(null);
+    const [apiError, setApiError] = useState(false);
+    const [selectedType, setSelectedType] = useState('social');
+
+    useEffect(() => {
+      fetch(`http://www.boredapi.com/api/activity?type=${selectedType}`)
+      .then((response)=> {
+        if (response.ok) {
+          return response.json(); 
+        }
+        throw new Error("Bad response - message from App.js fetch")
+      })
+      .then((response) => setActivity(response))
+      .catch((error) => console.log(error));
+    },[]) 
+
   const pretendActivity = {
     activity: "Kat's new activity to test the component",
     type: "social",
@@ -15,25 +32,15 @@ const App = () => {
     accessibility: 0.2,
   };
   
-  const [type, setType] = useState('');
-  const [activity, setActivity] = useState({});
-
-  function chooseType(event) {
-    setType({ type: event.target.value})
-  }
-
-  function searchBoredAPI(type) {
-    console.log(`Searching Bored API for a ${type} activity. This is from the searchBoredAPI function in App.js`)
-  }
-
   return (
     <div >
       < Header />
-      < Activity activity={pretendActivity} />
+      < Activity activity={activity} />
+      < ApiError apiError={apiError} />
       < SearchButtons 
           setActivity={setActivity}
-          searchBoredAPI={searchBoredAPI} 
-          chooseType={chooseType}/>
+          />
+      
       < Footer />
     </div>
   )
