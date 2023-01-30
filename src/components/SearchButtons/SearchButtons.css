@@ -68,7 +68,8 @@ button:nth-child(even) {
 @media only screen and (min-width: 1200px) {
 
     .searchButtons{
-        margin: 5vw;
+        margin: 0vw 9vw;
+        align-content: center;
     }
 
     button {
