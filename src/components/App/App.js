@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import SearchButtons from '../SearchButtons/SearchButtons'
@@ -8,37 +8,34 @@ import ApiError from '../ApiError/ApiError'
 const App = () => {
     const [activity, setActivity] = useState(null);
     const [apiError, setApiError] = useState(false);
-    const [selectedType, setSelectedType] = useState('null');
-
-// If response.json includes the string text 'error' I want to: 
-// 1. throw a new error
-// 2. set ApiError to true
-// 3. Skip setActivity
-// If I throw an error, does this then skip to the catch block?  
+    const [selectedType, setSelectedType] = useState(null);
+    const isInitialMount = useRef(true);
 
     useEffect(() => {
-      fetch(`https://www.boredapi.com/api/activity?type=${selectedType}`)
-      .then((response)=> {
-        if (response.ok) {
-          return response.json(); 
-        } 
-      })
-      // This is what was working previously:
-      // .then((response) => setActivity(response))
-      .then((response) => {
-        const objAsString = JSON.stringify(response)
-        console.log(objAsString)
-        if(objAsString.includes('error')) {
-          setApiError(true)
-        } else {
-          setActivity(response)
-          setApiError(false)
+      if (isInitialMount.current) {
+        isInitialMount.current = false
+      } else {
+        fetch(`https://www.boredapi.com/api/activity?type=${selectedType}`)
+        .then((response)=> {
+          if (response.ok) {
+            return response.json(); 
+          } 
+        })
+        .then((response) => {
+          const objAsString = JSON.stringify(response)
+          console.log(isInitialMount.current)
+          if(objAsString.includes('error')) {
+            setApiError(true)
+            throw new Error(`Error from fetch request in App.js. The JSON response converted to string is: ${objAsString}`)
+          } else {
+            setActivity(response)
+            setApiError(false)
+          }
         }
-      }
-      )
-      .catch((error) => console.log(error));
-    },[selectedType]) 
-  
+        )
+        .catch((error) => console.log(error));
+      }},[selectedType]) 
+      
   return (
     <div >
       < Header />
@@ -49,5 +46,6 @@ const App = () => {
     </div>
   )
 }
+
 
 export default App;
