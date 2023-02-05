@@ -2,7 +2,7 @@ import React from "react";
 import './ApiError.css'
 
 export const ApiError = (props) => {
-    if (props.apiError) {
+    if (props.apiError === true) {
         return (
             <div className="ApiErrorSection">
                 <p>Oh dear!</p>

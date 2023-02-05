@@ -8,7 +8,13 @@ import ApiError from '../ApiError/ApiError'
 const App = () => {
     const [activity, setActivity] = useState(null);
     const [apiError, setApiError] = useState(false);
-    const [selectedType, setSelectedType] = useState('social');
+    const [selectedType, setSelectedType] = useState('null');
+
+// If response.json includes the string text 'error' I want to: 
+// 1. throw a new error
+// 2. set ApiError to true
+// 3. Skip setActivity
+// If I throw an error, does this then skip to the catch block?  
 
     useEffect(() => {
       fetch(`https://www.boredapi.com/api/activity?type=${selectedType}`)
@@ -16,11 +22,20 @@ const App = () => {
         if (response.ok) {
           return response.json(); 
         } 
-        // Not fully tested yet setApiError
-        setApiError(true)
-        throw new Error("Bad response - message from App.js fetch")
       })
-      .then((response) => setActivity(response))
+      // This is what was working previously:
+      // .then((response) => setActivity(response))
+      .then((response) => {
+        const objAsString = JSON.stringify(response)
+        console.log(objAsString)
+        if(objAsString.includes('error')) {
+          setApiError(true)
+        } else {
+          setActivity(response)
+          setApiError(false)
+        }
+      }
+      )
       .catch((error) => console.log(error));
     },[selectedType]) 
   
