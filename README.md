@@ -26,6 +26,16 @@ Node version 16.2.0
 
 The app is delpoyed using Netlify's automated build pipeline linked to GitHub.
 
+## Accessibility
+
+The Accessibility Insights For Web extension did not identify any accessibility issues from its 'Fast Pass' automated tests. The Chrome Dev Tools Lighthouse Report showed an accessibility score of 100% as of 05-Feb-2023.
+
+<img src="./public/Screenshot_Accessibility_05Feb2023.png" height="175">
+
+Manual testing of keyboard accessibility showed all required elements could be selected using the keyboard. The 'focus-visible' properties of the buttons and link were updated to make the selection more visually prominent. For example:
+
+<img src="./public/Screenshot_Keyboard_selected_button.png" height="125">
+
 ## Errors
 
 If the user requests an activity from a category that does not exist, the API call does not throw an error, it returns an error object E.g.:
