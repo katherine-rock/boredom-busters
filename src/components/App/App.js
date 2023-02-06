@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import SearchButtons from '../SearchButtons/SearchButtons'
+import { Loading } from '../Loading/Loading'
 import Activity from '../Activity/Activity'
 import ApiError from '../ApiError/ApiError'
 
@@ -10,6 +11,7 @@ const App = () => {
     const [apiError, setApiError] = useState(false);
     const [selectedType, setSelectedType] = useState(null);
     const [clickCount, setClickCount] = useState(0);
+    const [isLoading, setIsLoading] = useState(false)
     const isInitialMount = useRef(true);
 
     useEffect(() => {
@@ -18,8 +20,11 @@ const App = () => {
         isInitialMount.current = false
       } else {
         fetch(`https://www.boredapi.com/api/activity?type=${selectedType}`)
+        .then(setActivity(null))
+        .then(setIsLoading(true))
         .then((response)=> {
           if (response.ok) {
+            setIsLoading(false)
             return response.json(); 
           } 
         })
@@ -41,6 +46,7 @@ const App = () => {
   return (
     <div >
       < Header />
+      < Loading isLoading={isLoading} />
       < Activity activity={activity} />
       < ApiError apiError={apiError} />
       < SearchButtons 

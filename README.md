@@ -49,3 +49,13 @@ The fetch call includes logic to check if the response object contains the word 
 ## Lifecycle
 
 The 'useRef' hook has been used so that the fetch request is not run the first time the App is run. If the fetch request is called on the first render, the initial value of the variable 'activityType' is the default value of null. The useRef hook has been added so the fetch request is only called once the user clicks a button to select the activity type. 
+
+## Imported components 
+
+### Loading Spinner
+
+A loading spinner shows the user the button has been clicked and the request for information is in progress. 
+
+<img src="./public/Screenshot_Loading_Spinner.png" height="50">
+
+Documentation: https://www.npmjs.com/package/react-loader-spinner 

@@ -1,0 +1,21 @@
+.loading-container {
+    transition: all 3s;
+    background-color: black;
+    display: flex;
+    border-radius: 10px;
+    max-width: fit-content;
+    padding: 1rem;
+    margin: auto;
+    margin-top: 1rem;
+    align-items: center;
+    animation-name: fadeout;
+    animation-duration: 4s;
+}
+
+.loading-text {
+    font-size: 2rem;
+    color: #F5CB11;
+    padding: 0 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
