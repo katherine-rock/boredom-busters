@@ -20,7 +20,7 @@ const SearchButtons = (props) => {
             <div className="searchButtons">
             {activityType.map((activity, index) => {
                 return (           
-                <button onClick={(event) => props.changeActivityType(event.target.value)} value={activity.type} key={index}>{activity.label}</button>
+                <button onClick={(event) => {props.changeActivityType(event.target.value); props.increaseClickCount() }} value={activity.type} key={index}>{activity.label}</button>
                 )
             })}
             </div>
