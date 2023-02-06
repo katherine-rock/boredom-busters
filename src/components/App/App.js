@@ -36,7 +36,7 @@ const App = () => {
           } 
         )
         .catch((error) => console.log(error));
-      }},[clickCount]) 
+      }},[selectedType, clickCount]) 
       
   return (
     <div >
