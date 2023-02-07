@@ -1,6 +1,5 @@
 .loading-container {
     transition: all 3s;
-    background-color: black;
     display: flex;
     border-radius: 10px;
     max-width: fit-content;
@@ -14,7 +13,8 @@
 
 .loading-text {
     font-size: 2rem;
-    color: #F5CB11;
+    text-shadow: 1px 1px black;
+    color: #63A566;
     padding: 0 1rem;
     font-family: Arial, Helvetica, sans-serif;
 }
