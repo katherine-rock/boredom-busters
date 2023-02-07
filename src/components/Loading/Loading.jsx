@@ -9,7 +9,7 @@ export const Loading = (props) => {
                 <Circles
                     height="60"
                     width="60"
-                    color="#63A566"
+                    color="#508C53"
                     ariaLabel="circles-loading"
                     wrapperStyle={{}}
                     wrapperClass=""

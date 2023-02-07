@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This app finds suggested activities for users by returning an activity based on the user's selected category.
+This app suggests an activity for the user based on the user's selected category. The user clicks on a button to select a category, e.g. 'Cooking', and a social activity is suggested, e.g. 'Make homemade ice cream'.
 
 ## Link to the live site
 
@@ -12,7 +12,7 @@ https://boredombusters.netlify.app/
 
 ## API
 
-This app uses the Bored API 'type' endpoint to return an activity based on the type selected by the user.
+This app uses the Bored API 'type' endpoint to return an activity based on the type of activity selected by the user.
 
 https://www.boredapi.com/documentation#endpoints-type
 
@@ -28,7 +28,7 @@ The app is delpoyed using Netlify's automated build pipeline linked to GitHub.
 
 ## Accessibility
 
-The Accessibility Insights For Web extension did not identify any accessibility issues from its 'Fast Pass' automated tests. The Chrome Dev Tools Lighthouse Report showed an accessibility score of 100% as of 05-Feb-2023.
+The Accessibility Insights For Web extension did not identify any accessibility issues from its 'Fast Pass' automated tests. The Chrome Dev Tools Lighthouse Report showed an accessibility score of 100% as of 07-Feb-2023.
 
 <img src="./public/Screenshot_Accessibility_05Feb2023.png" height="175">
 
@@ -59,3 +59,19 @@ A loading spinner shows the user the button has been clicked and the request for
 <img src="./public/Screenshot_Loading_Spinner.png" height="50">
 
 Documentation: https://www.npmjs.com/package/react-loader-spinner 
+
+## Responsive design
+
+The app includes a responsive design. 
+
+### Mobile
+
+<img src="./public/Screenshot_Mobile.png" height="350">
+
+### Tablet
+
+<img src="./public/Screenshot_Tablet.png" height="350">
+
+### Desktop
+
+<img src="./public/Screenshot_Boredom_Busters.png" height="350">
