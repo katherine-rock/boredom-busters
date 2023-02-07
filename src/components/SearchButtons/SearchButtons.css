@@ -30,7 +30,7 @@ button:nth-child(even) {
 }
 
 a:focus-visible, button:focus-visible {
-    outline: 8px solid forestgreen;
+    outline: 8px solid #9BC59D;
     border-radius: 3px;
 }
 

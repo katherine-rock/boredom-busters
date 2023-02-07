@@ -7,8 +7,6 @@
     margin: auto;
     margin-top: 1rem;
     align-items: center;
-    animation-name: fadeout;
-    animation-duration: 4s;
 }
 
 .loading-text {

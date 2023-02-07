@@ -7,6 +7,7 @@ const Activity = (props) => {
         return (
             <div className="result">
                 <p>Activity type: {props.activity.type}</p>
+                <hr/>
                 <p>{props.activity.activity}</p>
             </div>
         )
