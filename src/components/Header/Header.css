@@ -13,17 +13,22 @@
 
 .title_with_image {
     max-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 .main_heading {
     color: #F5CB11;
-    padding: 2rem 1rem 0rem 1rem;
+    padding: 2rem 0rem 0rem 0rem;
     font-size: 3rem;
     text-align: center;
 }
 
 .header img {
-    max-width: 70vw;
+    max-width: 35vw;
+    margin: auto;
+    margin-top: 2rem;
 }
 
 .intro_text {
@@ -48,7 +53,7 @@
     }
 
     .header img {
-        max-width: 50vw;
+        max-width: 30vw;
     }
 
     .intro_text {
@@ -61,8 +66,12 @@
 
 @media only screen and (min-width: 1200px) {
 
+    .title_with_image {
+        padding-top: 0;
+    }
     .main_heading {
         font-size: 6rem;
+
     }
 
     .header img {

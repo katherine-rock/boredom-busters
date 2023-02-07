@@ -11,7 +11,7 @@ const App = () => {
     const [apiError, setApiError] = useState(false);
     const [selectedType, setSelectedType] = useState(null);
     const [clickCount, setClickCount] = useState(0);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
     const isInitialMount = useRef(true);
 
     useEffect(() => {
