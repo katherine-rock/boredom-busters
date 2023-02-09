@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders basic empty template', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/basic empty template/i);
+  const linkElement = getByText(/boredapi/i);
   expect(linkElement).toBeInTheDocument();
 });
